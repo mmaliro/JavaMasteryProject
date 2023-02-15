@@ -1,9 +1,10 @@
 package learn.models;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public class Host {
-    private String host_id;
+    private UUID host_id;
 
     private String lastName;
 
@@ -23,7 +24,7 @@ public class Host {
 
     private BigDecimal weekendRate;
 
-    public Host(String host_id, String lastName, String email, String phone, String address, String city, String state, String postal_code, BigDecimal standardRate, BigDecimal weekendRate) {
+    public Host(UUID host_id, String lastName, String email, String phone, String address, String city, String state, String postal_code, BigDecimal standardRate, BigDecimal weekendRate) {
         this.host_id = host_id;
         this.lastName = lastName;
         this.hostEmail = email;
@@ -36,11 +37,11 @@ public class Host {
         this.weekendRate = weekendRate;
     }
 
-    public String getHost_id() {
+    public UUID getHost_id() {
         return host_id;
     }
 
-    public void setHost_id(String host_id) {
+    public void setHost_id(UUID host_id) {
         this.host_id = host_id;
     }
 

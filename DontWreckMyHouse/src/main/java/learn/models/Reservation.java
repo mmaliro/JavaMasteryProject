@@ -26,6 +26,10 @@ public class Reservation {
         this.total = total;
     }
 
+    public Reservation() {
+
+    }
+
 
     public Host getHost() {
         return host;
