@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a275849e-98f1-483b-8c8e-6c6d50426d3f" name="Changes" comment="">
+    <list default="true" id="a275849e-98f1-483b-8c8e-6c6d50426d3f" name="Changes" comment="Mastery">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/data/HostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/data/HostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/data/ReservationFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/data/ReservationFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/data/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/data/ReservationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/models/Host.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/models/Host.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/models/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/models/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +51,21 @@
       <option name="presentableId" value="Default" />
       <updated>1676443195803</updated>
     </task>
+    <task id="LOCAL-00001" summary="Mastery">
+      <created>1676484158327</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676484158327</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Mastery" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mastery" />
   </component>
 </project>
