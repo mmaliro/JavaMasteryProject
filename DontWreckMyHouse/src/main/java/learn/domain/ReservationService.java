@@ -7,6 +7,7 @@ import learn.data.ReservationRepository;
 import learn.models.Guest;
 import learn.models.Host;
 import learn.models.Reservation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class ReservationService {
     private final HostRepository hostRepository;
     private final ReservationRepository reservationRepository;
 
+    @Autowired
     public ReservationService(GuestRepository guestRepository, HostRepository hostRepository, ReservationRepository reservationRepository) {
         this.guestRepository = guestRepository;
         this.hostRepository = hostRepository;
@@ -49,6 +51,4 @@ public class ReservationService {
 
         return guestReservations;
     }
-
-
 }
