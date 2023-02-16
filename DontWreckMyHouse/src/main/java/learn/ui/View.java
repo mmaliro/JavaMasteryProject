@@ -57,7 +57,7 @@ public class View {
         } else {
             for (Reservation res : results) {
              //   io.println(res.toString());
-                io.printf("ID: %s, %s - %s, Guest: %n" , res.getRes_id(), io.formatter.format(res.getStartDate()), io.formatter.format(res.getEndDate()), res.getGuest().getLastName());
+                io.printf("ID: %s, %s - %s, Guest: %s, %s, Email: %s%n" , res.getRes_id(), io.formatter.format(res.getStartDate()), io.formatter.format(res.getEndDate()), res.getGuest().getLastName(), res.getGuest().getFirstName(), res.getGuest().getGuestEmail());
             }
         }
     }
