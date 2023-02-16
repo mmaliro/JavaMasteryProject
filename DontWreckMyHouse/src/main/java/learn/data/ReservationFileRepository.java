@@ -11,7 +11,6 @@ import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 @Repository
 public class ReservationFileRepository implements ReservationRepository {
@@ -19,12 +18,12 @@ public class ReservationFileRepository implements ReservationRepository {
     private static final String HEADER = "id,start_date,end_date,guest_id,total";
     private final String directory;
 
-    public ReservationFileRepository(@Value("${reservationFilePath}") String directory) {
+    public ReservationFileRepository(@Value("${reservationFilePath:./data/reservations/}") String directory) {
         this.directory = directory;
     }
 
     @Override
-    public List<Reservation> findByHost(UUID host_id) throws DataException {
+    public List<Reservation> findByHost(String host_id) throws DataException {
         ArrayList<Reservation> result = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(getFilePath((host_id))))) {
 
@@ -84,7 +83,7 @@ public class ReservationFileRepository implements ReservationRepository {
         return false;
     }
 
-    private String getFilePath(UUID host_id) {
+    private String getFilePath(String host_id) {
         return Paths.get(directory, host_id + ".csv").toString();
     }
 
@@ -112,7 +111,7 @@ public class ReservationFileRepository implements ReservationRepository {
         return result;
     }
 
-    private void writeAll(List<Reservation> reservations, UUID host_id) throws DataException {
+    private void writeAll(List<Reservation> reservations, String host_id) throws DataException {
         try (PrintWriter writer = new PrintWriter(getFilePath(host_id))) {
 
             writer.println(HEADER);

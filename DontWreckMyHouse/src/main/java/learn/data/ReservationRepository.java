@@ -8,7 +8,7 @@ import java.util.UUID;
 
 public interface ReservationRepository {
 
-    List<Reservation> findByHost(UUID host_id) throws DataException;
+    List<Reservation> findByHost(String host_id) throws DataException;
 
     Reservation add(Reservation reservation) throws DataException;
 

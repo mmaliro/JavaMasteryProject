@@ -7,12 +7,12 @@ import learn.data.ReservationRepository;
 import learn.models.Guest;
 import learn.models.Host;
 import learn.models.Reservation;
+import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
+@Service
 public class ReservationService {
 
     private final GuestRepository guestRepository;
@@ -25,7 +25,7 @@ public class ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
-    public List<Reservation> findByHost(UUID host_id) throws DataException {
+    public List<Reservation> findByHost(String host_id) throws DataException {
         List<Reservation> result = reservationRepository.findByHost(host_id);
         for (Reservation reservation : result) {
             int guest_id = reservation.getGuest().getGuest_id();
