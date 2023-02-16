@@ -55,7 +55,7 @@ public class HostFileRepository implements HostRepository{
     @Override
     public Host findHostByEmail(String hostEmail) throws DataException {
         return findAll().stream()
-                .filter(host -> host.getHostEmail() == hostEmail)
+                .filter(host -> host.getHostEmail().equals(hostEmail))
                 .findFirst()
                 .orElse(null);
     }
@@ -65,14 +65,13 @@ public class HostFileRepository implements HostRepository{
         result.setHost_id(fields[0]);
         result.setLastName(fields[1]);
         result.setHostEmail(fields[2]);
-        result.setCity(fields[3]);
-        result.setPhone(fields[4]);
-        result.setAddress(fields[5]);
-        result.setCity(fields[6]);
-        result.setState(fields[7]);
-        result.setPostal_code(fields[8]);
-        result.setStandardRate(new BigDecimal(fields[9]));
-        result.setWeekendRate(new BigDecimal(fields[10]));
+        result.setPhone(fields[3]);
+        result.setAddress(fields[4]);
+        result.setCity(fields[5]);
+        result.setState(fields[6]);
+        result.setPostal_code(fields[7]);
+        result.setStandardRate(new BigDecimal(fields[8]));
+        result.setWeekendRate(new BigDecimal(fields[9]));
         return result;
     }
 

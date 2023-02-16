@@ -74,9 +74,7 @@ public class Controller {
         //5. Display the results to the user
 
         String hostEmail = view.getHostEmail();
-        System.out.println("The email you entered is: " + hostEmail);
-        String tempHostId = "2e72f86c-b8fe-4265-b4f1-304dea8762db";
-        List<Reservation> allReservations = reservationService.findByHost(tempHostId);
+        List<Reservation> allReservations = reservationService.findByHost(hostEmail);
         view.displayReservations(allReservations);
     }
 }

@@ -56,7 +56,7 @@ public class GuestFileRepository implements GuestRepository {
     @Override
     public Guest findByEmail(String guestEmail) throws DataException {
         return findAll().stream()
-                .filter(guest -> guest.getGuestEmail() == guestEmail)
+                .filter(guest -> guest.getGuestEmail().equals(guestEmail))
                 .findFirst()
                 .orElse(null);
     }

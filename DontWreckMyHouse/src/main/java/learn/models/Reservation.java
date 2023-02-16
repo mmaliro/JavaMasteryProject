@@ -27,7 +27,7 @@ public class Reservation {
     }
 
     public Reservation() {
-
+        this.total = new BigDecimal("100");
     }
 
 

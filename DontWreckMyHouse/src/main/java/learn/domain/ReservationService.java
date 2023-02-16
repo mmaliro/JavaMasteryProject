@@ -27,12 +27,13 @@ public class ReservationService {
         this.reservationRepository = reservationRepository;
     }
 
-    public List<Reservation> findByHost(String host_id) throws DataException {
-        List<Reservation> result = reservationRepository.findByHost(host_id);
+    public List<Reservation> findByHost(String hostEmail) throws DataException {
+        Host host = hostRepository.findHostByEmail(hostEmail);
+        List<Reservation> result = reservationRepository.findByHost(host.getHost_id());
         for (Reservation reservation : result) {
             int guest_id = reservation.getGuest().getGuest_id();
             reservation.setGuest(guestRepository.findById(guest_id));
-            reservation.setHost(hostRepository.findById(host_id));
+            reservation.setHost(host);
         }
 
         return result;
