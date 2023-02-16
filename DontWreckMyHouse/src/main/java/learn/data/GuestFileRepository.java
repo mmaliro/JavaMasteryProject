@@ -18,7 +18,7 @@ public class GuestFileRepository implements GuestRepository {
     private final String filePath;
     private final String DELIMITER = ",";
 
-    public GuestFileRepository(@Value("${guestFilePath}") String filePath) {
+    public GuestFileRepository(@Value("${guestFilePath:./data/guests.csv/}") String filePath) {
         this.filePath = filePath;
     }
 
