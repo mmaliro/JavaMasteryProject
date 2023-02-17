@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a275849e-98f1-483b-8c8e-6c6d50426d3f" name="Changes" comment="Mastery">
-      <change afterPath="$PROJECT_DIR$/data/reservations/72602af4-b7cf-42ed-b423-7553bf14903d.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/reservations/3edda6bc-ab95-49a8-8962-d50b53f84b15.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservations/3edda6bc-ab95-49a8-8962-d50b53f84b15.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/GuestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/GuestService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/HostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/HostService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/models/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/models/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676586325029</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Mastery">
+      <created>1676629545265</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1676629545265</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">

@@ -62,6 +62,37 @@ public class ReservationService {
         Result result = new Result();
         Reservation newReservation = reservationRepository.add(reservation);
         result.setReservation(newReservation);
+
         return result;
     }
+
+    public Result validate(Reservation reservation) throws DataException {
+        Result result = new Result();
+
+        if (reservation.getGuest() == null || reservation.getGuest().getGuestEmail() == null || reservation.getGuest().getGuestEmail().trim().length() == 0) {
+            result.addMessage("Guest email is required.");
+        }
+
+        if (reservation.getHost() == null || reservation.getHost().getHostEmail() == null || reservation.getHost().getHostEmail().trim().length() == 0) {
+            result.addMessage("Host email is required.");
+        }
+
+        if (reservation.getStartDate() == null) {
+            result.addMessage("Start date is required.");
+        }
+
+        if (reservation.getEndDate() == null) {
+            result.addMessage("End date is required.");
+        }
+
+        if (reservation.getStartDate() != null && reservation.getEndDate() != null && reservation.getStartDate().isAfter(reservation.getEndDate())) {
+            result.addMessage("Start date should be before the end date.");
+        }
+
+
+        return result;
+    }
+
+
 }
+

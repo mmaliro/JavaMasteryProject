@@ -1,6 +1,7 @@
 package learn.ui;
 
 import learn.data.DataException;
+import learn.domain.Result;
 import learn.models.Reservation;
 import org.springframework.stereotype.Component;
 
@@ -32,11 +33,12 @@ public class View {
         return MainMenu.fromValue(io.readInt(message, min, max));
     }
 
-    public void displayHeader(String message) {
+    public void displayHeader(String header) {
         io.println("");
-        io.println(message);
-        io.println("=".repeat(message.length()));
+        io.println(header);
+        io.println("=".repeat(header.length()));
     }
+
 
     public void displayException(DataException ex) {
         displayHeader("An error has occurred:");
