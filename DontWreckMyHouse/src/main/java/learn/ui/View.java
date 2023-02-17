@@ -4,6 +4,7 @@ import learn.data.DataException;
 import learn.models.Reservation;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Component
@@ -51,6 +52,10 @@ public class View {
 
     }
 
+    public String getGuestEmail() {
+        return io.readString("Guest Email: ");
+    }
+
     public void displayReservations(List<Reservation> results) {
         if (results.size() == 0) {
             io.println("This host does not have any reservations.");
@@ -60,6 +65,14 @@ public class View {
                 io.printf("ID: %s, %s - %s, Guest: %s, %s, Email: %s%n" , res.getRes_id(), io.formatter.format(res.getStartDate()), io.formatter.format(res.getEndDate()), res.getGuest().getLastName(), res.getGuest().getFirstName(), res.getGuest().getGuestEmail());
             }
         }
+    }
+
+    public LocalDate getDates(String prompt) {
+        return io.readLocalDate(prompt);
+    }
+
+    public void printSuccessMessageForCreate(Reservation res) {
+        io.printf("Success! Reservation %s added", res.getRes_id());
     }
 }
 

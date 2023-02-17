@@ -15,19 +15,19 @@ public class Reservation {
 
     private Guest guest;
 
-    private BigDecimal total;
+    private BigDecimal total = new BigDecimal("100") ;
 
-    public Reservation(Host host, int res_id, LocalDate startDate, LocalDate endDate, Guest guest, BigDecimal total) {
+    public Reservation(Host host, int res_id, LocalDate startDate, LocalDate endDate, Guest guest) {
         this.host = host;
         this.res_id = res_id;
         this.startDate = startDate;
         this.endDate = endDate;
         this.guest = guest;
-        this.total = total;
+        this.total = new BigDecimal("100");
     }
 
     public Reservation() {
-        this.total = new BigDecimal("100");
+//        this.total = new BigDecimal("100");
     }
 
 

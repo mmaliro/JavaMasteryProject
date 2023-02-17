@@ -52,4 +52,16 @@ public class ReservationService {
 
         return guestReservations;
     }
+
+    public Result createReservation(Reservation reservation) throws DataException {
+        //1. Create a new result -Future addition: Add validation
+        //2. Use the repository "add" method to write the new reservation to the files
+        //3. Set the reservation on the result
+        //4. Return the result
+
+        Result result = new Result();
+        Reservation newReservation = reservationRepository.add(reservation);
+        result.setReservation(newReservation);
+        return result;
+    }
 }

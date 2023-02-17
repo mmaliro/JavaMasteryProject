@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a275849e-98f1-483b-8c8e-6c6d50426d3f" name="Changes" comment="Mastery">
+      <change afterPath="$PROJECT_DIR$/data/reservations/72602af4-b7cf-42ed-b423-7553bf14903d.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/data/GuestFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/data/GuestFileRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/data/HostFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/data/HostFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/reservations/3edda6bc-ab95-49a8-8962-d50b53f84b15.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservations/3edda6bc-ab95-49a8-8962-d50b53f84b15.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/GuestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/GuestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/HostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/HostService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/models/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/models/Reservation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,16 +47,20 @@
     </option>
   </component>
   <component name="ProjectId" id="2LlQT7m6NK0eMbP4dQvSnD18kfU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mwengemaliro/Downloads/JavaMasteryProject/JavaMasteryProject/DontWreckMyHouse&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/mwengemaliro/Downloads/JavaMasteryProject/JavaMasteryProject/DontWreckMyHouse"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -110,13 +119,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676570011363</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Mastery">
+      <created>1676586325029</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676586325029</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.csv" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Mastery" />
     <option name="LAST_COMMIT_MESSAGE" value="Mastery" />
   </component>
