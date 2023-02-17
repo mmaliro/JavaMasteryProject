@@ -59,7 +59,12 @@ public class ReservationService {
         //3. Set the reservation on the result
         //4. Return the result
 
-        Result result = new Result();
+        Result result = validate(reservation);
+        if (!result.isSuccess()) {
+            return result;
+        }
+
+      //  Result result = new Result();
         Reservation newReservation = reservationRepository.add(reservation);
         result.setReservation(newReservation);
 
@@ -87,6 +92,14 @@ public class ReservationService {
 
         if (reservation.getStartDate() != null && reservation.getEndDate() != null && reservation.getStartDate().isAfter(reservation.getEndDate())) {
             result.addMessage("Start date should be before the end date.");
+        }
+
+        List<Reservation> hostReservations = reservationRepository.findByHost(reservation.getHost().getHost_id());
+        for (Reservation res : hostReservations) {
+            if (reservation.getStartDate().isBefore(res.getEndDate()) && reservation.getEndDate().isAfter(res.getStartDate())) {
+                result.addMessage("This reservation overlaps with an existing reservation.");
+                break;
+            }
         }
 
 

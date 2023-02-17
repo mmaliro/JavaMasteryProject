@@ -7,7 +7,6 @@
     <list default="true" id="a275849e-98f1-483b-8c8e-6c6d50426d3f" name="Changes" comment="Mastery">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676629545265</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Mastery">
+      <created>1676647826896</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1676647826896</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
