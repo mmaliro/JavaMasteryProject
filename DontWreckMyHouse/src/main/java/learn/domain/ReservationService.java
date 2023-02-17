@@ -10,6 +10,7 @@ import learn.models.Reservation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +30,12 @@ public class ReservationService {
 
     public List<Reservation> findByHost(String hostEmail) throws DataException {
         Host host = hostRepository.findHostByEmail(hostEmail);
+
+        if (host == null) {
+
+            throw new IllegalArgumentException("Host with email " + hostEmail + " not found.");
+        }
+
         List<Reservation> result = reservationRepository.findByHost(host.getHost_id());
         for (Reservation reservation : result) {
             int guest_id = reservation.getGuest().getGuest_id();
@@ -58,13 +65,13 @@ public class ReservationService {
         //2. Use the repository "add" method to write the new reservation to the files
         //3. Set the reservation on the result
         //4. Return the result
-
         Result result = validate(reservation);
+
         if (!result.isSuccess()) {
             return result;
         }
 
-      //  Result result = new Result();
+       // Result result = new Result();
         Reservation newReservation = reservationRepository.add(reservation);
         result.setReservation(newReservation);
 
@@ -94,12 +101,29 @@ public class ReservationService {
             result.addMessage("Start date should be before the end date.");
         }
 
+        if (reservation.getStartDate() != null && reservation.getStartDate().isBefore(LocalDate.now())) {
+            result.addMessage("Start date should not be in the past.");
+        }
+
         List<Reservation> hostReservations = reservationRepository.findByHost(reservation.getHost().getHost_id());
         for (Reservation res : hostReservations) {
             if (reservation.getStartDate().isBefore(res.getEndDate()) && reservation.getEndDate().isAfter(res.getStartDate())) {
                 result.addMessage("This reservation overlaps with an existing reservation.");
-                break;
             }
+
+            if (reservation.getStartDate().isBefore(res.getStartDate()) && reservation.getEndDate().isAfter(res.getStartDate())) {
+                result.addMessage("This reservation overlaps with an existing reservation.");
+            }
+
+            if (reservation.getStartDate().isBefore(res.getEndDate()) && reservation.getEndDate().isAfter(res.getEndDate())) {
+                result.addMessage("This reservation overlaps with an existing reservation.");
+            }
+
+            if (reservation.getStartDate().isAfter(res.getStartDate()) && reservation.getEndDate().isBefore(res.getEndDate())) {
+                result.addMessage("This reservation overlaps with an existing reservation.");
+            }
+
+
         }
 
 
