@@ -66,6 +66,8 @@ public class Controller {
     }
 
     private void updateReservation() {
+        view.displayHeader("Edit Reservation");
+
     }
 
     private void addReservation() throws DataException {
@@ -76,11 +78,19 @@ public class Controller {
         //5. Future addition - Display summary confirmation
         //6. Show success message
         //7. Show error message for reservation not being able to be added
-
+        view.displayHeader("Add Reservation");
         String guestEmail = view.getGuestEmail();
         Guest guest = guestService.findByEmail(guestEmail);
+        if (guest == null) {
+            view.printString("Guest email not found.");
+            return;
+        }
         String hostEmail = view.getHostEmail();
         Host host = hostService.findByEmail(hostEmail);
+        if (host == null) {
+            view.printString("Host email not found.");
+            return;
+        }
         List<Reservation> allReservations = reservationService.findByHost(hostEmail);
         view.displayReservations(allReservations);
         LocalDate start = view.getDates("Start (MM/dd/yyyy): ");
@@ -93,7 +103,11 @@ public class Controller {
         Result result = reservationService.createReservation(newReservation);
         if (result.isSuccess()) {
             view.printSuccessMessageForCreate(result.getReservation());
+        } else {
+            view.displayError(result);
         }
+
+
 
 
 

@@ -15,7 +15,7 @@ public class Reservation {
 
     private Guest guest;
 
-    private BigDecimal total = new BigDecimal("100") ;
+    private BigDecimal total;
 
     public Reservation(Host host, int res_id, LocalDate startDate, LocalDate endDate, Guest guest) {
         this.host = host;
@@ -23,11 +23,11 @@ public class Reservation {
         this.startDate = startDate;
         this.endDate = endDate;
         this.guest = guest;
-        this.total = new BigDecimal("100");
+     //   this.total = new BigDecimal("100");
     }
 
     public Reservation() {
-//        this.total = new BigDecimal("100");
+
     }
 
 
