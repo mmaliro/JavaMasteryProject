@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -88,6 +89,7 @@ public class ReservationService {
             result.setReservation(reservation);
 
         }
+
         return result;
     }
 
@@ -130,6 +132,7 @@ public class ReservationService {
             return result;
         }
 
+
         List<Reservation> hostReservations = reservationRepository.findByHost(reservation.getHost().getHost_id());
         for (Reservation res : hostReservations) {
             if (reservation.getStartDate().isBefore(res.getEndDate()) && reservation.getEndDate().isAfter(res.getStartDate())) {
@@ -153,6 +156,7 @@ public class ReservationService {
             }
 
 
+
         }
 
 
@@ -164,8 +168,10 @@ public class ReservationService {
         BigDecimal weekendRate = new BigDecimal(String.valueOf(total.getHost().getWeekendRate()));
         LocalDate startDate = total.getStartDate();
         LocalDate endDate = total.getEndDate();
+
         BigDecimal totalWeekdays = new BigDecimal("0");
         BigDecimal totalWeekends = new BigDecimal("0");
+
 
         for (; startDate.compareTo(endDate) < 0; startDate = startDate.plusDays(1)) {
             if (startDate.getDayOfWeek() != DayOfWeek.FRIDAY && startDate.getDayOfWeek() != DayOfWeek.SATURDAY) {
@@ -175,14 +181,11 @@ public class ReservationService {
             if (startDate.getDayOfWeek() == DayOfWeek.FRIDAY || startDate.getDayOfWeek() == DayOfWeek.SATURDAY) {
                 totalWeekends = totalWeekends.add(weekendRate);
             }
+
         }
 
         return totalWeekdays.add(totalWeekends);
     }
-
-
-
-
 
 
 }

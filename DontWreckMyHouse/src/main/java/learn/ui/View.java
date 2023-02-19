@@ -2,14 +2,18 @@ package learn.ui;
 
 import learn.data.DataException;
 import learn.domain.Result;
+import learn.models.Host;
 import learn.models.Reservation;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Scanner;
 
 @Component
 public class View {
+
+    Scanner console = new Scanner(System.in);
 
     private final ConsoleIO io;
 
@@ -58,11 +62,12 @@ public class View {
         return io.readString("Guest Email: ");
     }
 
-    public void displayReservations(List<Reservation> results) {
-        if (results.size() == 0) {
+    public void displayReservations(List<Reservation> reservations, Host host) {
+        io.printf("%s: %s, %s%n", host.getLastName(), host.getCity(), host.getState());
+        if (reservations.size() == 0) {
             io.println("This host does not have any reservations.");
         } else {
-            for (Reservation res : results) {
+            for (Reservation res : reservations) {
              //   io.println(res.toString());
                 io.printf("ID: %s, %s - %s, Guest: %s, %s, Email: %s%n" , res.getRes_id(), io.formatter.format(res.getStartDate()), io.formatter.format(res.getEndDate()), res.getGuest().getLastName(), res.getGuest().getFirstName(), res.getGuest().getGuestEmail());
             }
@@ -73,8 +78,17 @@ public class View {
         return io.readLocalDate(prompt);
     }
 
+    public int getResId() {
+        printString("Reservation ID: ");
+        return Integer.parseInt(console.next());
+    }
+
     public void printSuccessMessageForCreate(Reservation res) {
         io.printf("Success! Reservation %s added", res.getRes_id());
+    }
+
+    public void printSuccessMessageForUpdate(Reservation res) {
+        io.printf("Success! Reservation %s updated", res.getRes_id());
     }
 
     public void displayError(Result result) {
@@ -87,5 +101,7 @@ public class View {
     public void printString(String prompt) {
         io.println(prompt);
     }
+
+
 }
 

@@ -2,6 +2,7 @@ package learn.models;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Reservation {
 
@@ -18,6 +19,7 @@ public class Reservation {
     private BigDecimal total;
 
     public Reservation(Host host, int res_id, LocalDate startDate, LocalDate endDate, Guest guest) {
+
         this.host = host;
         this.res_id = res_id;
         this.startDate = startDate;
@@ -27,6 +29,10 @@ public class Reservation {
     }
 
     public Reservation() {
+
+    }
+
+    public Reservation(Host host, LocalDate start, LocalDate end, Guest guest) {
 
     }
 
@@ -78,4 +84,5 @@ public class Reservation {
     public void setTotal(BigDecimal total) {
         this.total = total;
     }
+
 }

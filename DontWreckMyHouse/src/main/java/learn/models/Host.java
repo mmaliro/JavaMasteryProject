@@ -106,6 +106,7 @@ public class Host {
     }
 
     public BigDecimal getStandardRate() {
+
         return standardRate;
     }
 
