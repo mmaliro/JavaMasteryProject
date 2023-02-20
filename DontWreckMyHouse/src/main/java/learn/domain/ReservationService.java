@@ -102,9 +102,6 @@ public class ReservationService {
 
     public boolean cancelReservation(Reservation reservation) throws DataException {
         reservationRepository.deleteById(reservation);
-        if (reservation.getStartDate().isBefore(LocalDate.now())) {
-            System.out.println("You cannot cancel a reservation that is in the past.");
-        }
         return true;
     }
 

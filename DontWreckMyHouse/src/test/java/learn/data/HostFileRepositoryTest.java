@@ -59,10 +59,6 @@ class HostFileRepositoryTest {
     }
 
     @Test
-    void findAll() {
-    }
-
-    @Test
     void findHostByEmail() {
     }
 }
