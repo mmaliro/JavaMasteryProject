@@ -91,6 +91,7 @@ public class View {
         io.printf("Success! Reservation %s updated", res.getRes_id());
     }
 
+
     public void displayError(Result result) {
         displayHeader("Reservation not added:");
         for (String message : result.getMessages()) {
@@ -101,6 +102,8 @@ public class View {
     public void printString(String prompt) {
         io.println(prompt);
     }
+
+
 
 
 }

@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a275849e-98f1-483b-8c8e-6c6d50426d3f" name="Changes" comment="Mastery">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/reservations/b6ddb844-b990-471a-8c0a-519d0777eb9b.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservations/b6ddb844-b990-471a-8c0a-519d0777eb9b.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/models/Host.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/models/Host.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/models/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/models/Reservation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676712934481</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Mastery">
+      <created>1676835024001</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1676835024001</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="UnknownFeatures">

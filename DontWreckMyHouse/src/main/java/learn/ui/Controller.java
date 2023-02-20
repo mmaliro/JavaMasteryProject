@@ -90,6 +90,8 @@ public class Controller {
         }
 
 
+
+
     }
 
     private void updateReservation() throws DataException {
@@ -97,6 +99,7 @@ public class Controller {
         Reservation reservation = new Reservation();
         String guestEmail = view.getGuestEmail();
         Guest guest = guestService.findByEmail(guestEmail);
+        String input;
         if (guest == null) {
             view.printString("Guest email not found.");
             return;
@@ -121,13 +124,40 @@ public class Controller {
         editReservation.setEndDate(end);
         editReservation.setGuest(guest);
         editReservation.setHost(host);
+        editReservation.setRes_id(reservationId);
+        System.out.println("Summary");
+        System.out.println("=======");
+        System.out.printf("Start: %s%n", start);
+        System.out.printf("End: %s%n", end);
+        System.out.printf("Total: $%s%n", reservationService.calculate(editReservation));
+        System.out.println("Is this okay? [y/n]");
+        input = console.next();
+
+        Result result = reservationService.editReservation(editReservation);
 
 
-        Result result = reservationService.editReservation(reservation);
 
-        if (result.isSuccess()) {
-            view.printString("Reservation updated");
+       while (!(input.equalsIgnoreCase("y") || input.equalsIgnoreCase("n"))) {
+            System.out.println("Invalid input. Please enter 'y' or 'n'.");
+            System.out.println("Is this okay? [y/n]");
+            input = console.next();
         }
+
+        if (input.equalsIgnoreCase("y") && result.isSuccess()) {
+            System.out.printf("Success! Reservation %s updated", reservationId);
+        } else if (input.equalsIgnoreCase("n")) {
+            reservationService.cancelReservation(editReservation);
+            view.printString("Reservation cancelled. You can start over.");
+
+        }  else {
+        view.displayError(result);
+       }
+
+
+
+
+
+        System.out.println();
 
 
     }
@@ -148,6 +178,7 @@ public class Controller {
             view.printString("Host email not found.");
             return;
         }
+
         List<Reservation> allReservations = reservationService.findByHost(hostEmail);
         view.displayReservations(allReservations, host);
         LocalDate start = view.getDates("Start (MM/dd/yyyy): ");
@@ -166,14 +197,20 @@ public class Controller {
         input = console.next();
         Result result = reservationService.createReservation(newReservation);
 
-        if (input.equalsIgnoreCase("y") && result.isSuccess()) {
-            view.printSuccessMessageForCreate(result.getReservation());
-        } else if (input.equalsIgnoreCase("n") && result.isSuccess()) {
-            reservationService.cancelReservation(newReservation);
-            view.printString("Reservation cancelled");
-        } else {
-            view.displayError(result);
+        while (!(input.equalsIgnoreCase("y") || input.equalsIgnoreCase("n"))) {
+            System.out.println("Invalid input. Please enter 'y' or 'n'.");
+            System.out.println("Is this okay? [y/n]");
+            input = console.next();
         }
+
+            if (input.equalsIgnoreCase("y") && result.isSuccess()) {
+                view.printSuccessMessageForCreate(result.getReservation());
+            } else if (input.equalsIgnoreCase("n")) {
+                reservationService.cancelReservation(newReservation);
+                view.printString("Reservation cancelled");
+            } else {
+                view.displayError(result);
+            }
 
 
         System.out.println();

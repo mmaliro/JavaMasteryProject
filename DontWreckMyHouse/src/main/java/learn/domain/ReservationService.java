@@ -58,12 +58,16 @@ public class ReservationService {
 
         return guestReservations;
     }
+    //1. Create a new result -Future addition: Add validation
+    //2. Use the repository "add" method to write the new reservation to the files
+    //3. Set the reservation on the result
+    //4. Return the result
 
+    // Result result = new Result();
+    //  Reservation newReservation = reservationRepository.add(reservation);
+    //    result.setReservation(newReservation);
     public Result createReservation(Reservation reservation) throws DataException {
-        //1. Create a new result -Future addition: Add validation
-        //2. Use the repository "add" method to write the new reservation to the files
-        //3. Set the reservation on the result
-        //4. Return the result
+
         Result result = validate(reservation);
 
         if (result.isSuccess()) {
@@ -73,9 +77,6 @@ public class ReservationService {
 
         }
 
-       // Result result = new Result();
-      //  Reservation newReservation = reservationRepository.add(reservation);
-    //    result.setReservation(newReservation);
 
         return result;
     }
@@ -85,16 +86,25 @@ public class ReservationService {
 
         if (result.isSuccess()) {
             reservation.setTotal(calculate(reservation));
-            reservationRepository.update(reservation);
             result.setReservation(reservation);
 
-        }
+            boolean updated = reservationRepository.update(reservation);
+            if (updated) {
+                result.setReservation(reservation);
+            } else {
+                System.out.println("[Error] Something went wrong. Please try again.");
+            }
 
+
+        }
         return result;
     }
 
     public boolean cancelReservation(Reservation reservation) throws DataException {
         reservationRepository.deleteById(reservation);
+        if (reservation.getStartDate().isBefore(LocalDate.now())) {
+            System.out.println("You cannot cancel a reservation that is in the past.");
+        }
         return true;
     }
 
@@ -131,6 +141,9 @@ public class ReservationService {
             result.addMessage("Start date should not be in the past.");
             return result;
         }
+
+
+
 
 
         List<Reservation> hostReservations = reservationRepository.findByHost(reservation.getHost().getHost_id());
