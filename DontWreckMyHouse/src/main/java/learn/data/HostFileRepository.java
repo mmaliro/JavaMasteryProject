@@ -22,10 +22,11 @@ public class HostFileRepository implements HostRepository{
         this.filePath = filePath;
     }
 
+
     @Override
     public Host findById(String host_id) throws DataException {
         return findAll().stream()
-                .filter(host -> host.getHost_id() == host_id)
+                .filter(host -> host.getHost_id().equals(host_id))
                 .findFirst()
                 .orElse(null);
     }

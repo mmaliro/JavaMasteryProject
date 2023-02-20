@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a275849e-98f1-483b-8c8e-6c6d50426d3f" name="Changes" comment="Mastery">
+      <change afterPath="$PROJECT_DIR$/data/guests-seed.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/guests-test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/hosts-seed.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/hosts-test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/learn/data/GuestFileRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/learn/data/GuestRepositoryDouble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/learn/data/HostFileRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/reservations/b6ddb844-b990-471a-8c0a-519d0777eb9b.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/reservations/b6ddb844-b990-471a-8c0a-519d0777eb9b.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/domain/ReservationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/ui/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/data/GuestFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/data/GuestFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/data/HostFileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/data/HostFileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/learn/models/Guest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/learn/models/Guest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -53,9 +60,111 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mwengemaliro/Downloads/JavaMasteryProject/JavaMasteryProject/DontWreckMyHouse&quot;
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mwengemaliro/Downloads/JavaMasteryProject/JavaMasteryProject/DontWreckMyHouse&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="learn.data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.HostFileRepositoryTest.findHostByEmail">
+    <configuration name="HostFileRepositoryTest.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dontwreckmyhouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="learn.data" />
+      <option name="MAIN_CLASS_NAME" value="learn.data.HostFileRepositoryTest" />
+      <option name="METHOD_NAME" value="findAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HostFileRepositoryTest.findAllWhenFileHasData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dontwreckmyhouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="learn.data" />
+      <option name="MAIN_CLASS_NAME" value="learn.data.HostFileRepositoryTest" />
+      <option name="METHOD_NAME" value="findAllWhenFileHasData" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HostFileRepositoryTest.findAllWhenFileIsNotFoundThenThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dontwreckmyhouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="learn.data" />
+      <option name="MAIN_CLASS_NAME" value="learn.data.HostFileRepositoryTest" />
+      <option name="METHOD_NAME" value="findAllWhenFileIsNotFoundThenThrowException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HostFileRepositoryTest.findById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dontwreckmyhouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="learn.data" />
+      <option name="MAIN_CLASS_NAME" value="learn.data.HostFileRepositoryTest" />
+      <option name="METHOD_NAME" value="findById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HostFileRepositoryTest.findHostByEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dontwreckmyhouse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="learn.data.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="learn.data" />
+      <option name="MAIN_CLASS_NAME" value="learn.data.HostFileRepositoryTest" />
+      <option name="METHOD_NAME" value="findHostByEmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.HostFileRepositoryTest.findHostByEmail" />
+        <item itemvalue="JUnit.HostFileRepositoryTest.findAll" />
+        <item itemvalue="JUnit.HostFileRepositoryTest.findById" />
+        <item itemvalue="JUnit.HostFileRepositoryTest.findAllWhenFileHasData" />
+        <item itemvalue="JUnit.HostFileRepositoryTest.findAllWhenFileIsNotFoundThenThrowException" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -163,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676835024001</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Mastery">
+      <created>1676886570562</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1676886570562</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="UnknownFeatures">

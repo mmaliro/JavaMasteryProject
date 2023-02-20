@@ -13,6 +13,19 @@ public class Guest {
 
     private String state;
 
+    public Guest(int guest_id, String firstName, String lastName, String guestEmail, String phone, String state) {
+        this.guest_id = guest_id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.guestEmail = guestEmail;
+        this.phone = phone;
+        this.state = state;
+    }
+
+    public Guest() {
+
+    }
+
 
     public int getGuest_id() {
         return guest_id;
