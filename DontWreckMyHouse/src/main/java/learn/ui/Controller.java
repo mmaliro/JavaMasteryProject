@@ -65,13 +65,13 @@ public class Controller {
 
     private void deleteReservation() throws DataException {
         view.displayHeader("Cancel Reservation");
-        Reservation reservation = new Reservation();
-        String guestEmail = view.getGuestEmail();
+
+      /*  String guestEmail = view.getGuestEmail();
         Guest guest = guestService.findByEmail(guestEmail);
         if (guest == null) {
             view.printString("Guest email not found.");
             return;
-        }
+        } */
         String hostEmail = view.getHostEmail();
         Host host = hostService.findByEmail(hostEmail);
         if (host == null) {
@@ -88,14 +88,29 @@ public class Controller {
             view.displayReservations(allReservations, host);
         }
 
-        reservation.setRes_id(view.getResId());
-        reservation.setHost(host);
+        int reservationId = view.getResId();
+        Reservation reservation = null;
+
+        for (Reservation res : allReservations) {
+            if (reservationId == res.getRes_id()) {
+                reservation = res;
+            }
+
+        }
+
+        if (reservation == null) {
+            view.printString("Reservation ID not found");
+            return;
+        }
 
 
-        boolean result = reservationService.cancelReservation(reservation);
+        Result cancel = reservationService.cancelReservation(reservation);
 
-        if (result) {
+        if (cancel.isSuccess()) {
+            reservationService.cancelReservation(reservation);
             view.printString("Reservation cancelled");
+        } else {
+            view.displayError(cancel);
         }
 
 

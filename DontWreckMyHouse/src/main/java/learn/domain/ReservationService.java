@@ -93,38 +93,23 @@ public class ReservationService {
         return result;
     }
 
-    public boolean cancelReservation(Reservation reservation) throws DataException {
+    public Result cancelReservation(Reservation reservation) throws DataException {
         Result result = new Result();
-        boolean cancel = reservationRepository.deleteById(reservation);
 
-        if (cancel) {
-            reservationRepository.deleteById(reservation);
-
-        } else if(reservation.getStartDate().isBefore(LocalDate.now()) && !cancel)
+        if(reservation.getStartDate().isBefore(LocalDate.now()))
         {
             result.addMessage("[Error] Unable to cancel reservation. Start date is in the past");
-            return false;
+            return result;
         }
-        return true;
+
+
+        if (!reservation.getStartDate().isBefore(LocalDate.now())) {
+            reservationRepository.deleteById(reservation);
+
+        }
+        return result;
+
     }
-
-
-
-
-    //10,2023-02-17,2023-02-19,3,400
-
-    //  return result.isSuccess();
-
-
-      /*  if (reservation.getStartDate().isBefore(LocalDate.now())) {
-            return false;
-        }
-
-        reservationRepository.deleteById(reservation);
-        return true; */
-
-
-
 
 
     public Result validate(Reservation reservation) throws DataException {
