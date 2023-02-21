@@ -58,14 +58,7 @@ public class ReservationService {
 
         return guestReservations;
     }
-    //1. Create a new result -Future addition: Add validation
-    //2. Use the repository "add" method to write the new reservation to the files
-    //3. Set the reservation on the result
-    //4. Return the result
 
-    // Result result = new Result();
-    //  Reservation newReservation = reservationRepository.add(reservation);
-    //    result.setReservation(newReservation);
     public Result createReservation(Reservation reservation) throws DataException {
 
         Result result = validate(reservation);
@@ -101,9 +94,37 @@ public class ReservationService {
     }
 
     public boolean cancelReservation(Reservation reservation) throws DataException {
-        reservationRepository.deleteById(reservation);
+        Result result = new Result();
+        boolean cancel = reservationRepository.deleteById(reservation);
+
+        if (cancel) {
+            reservationRepository.deleteById(reservation);
+
+        } else if(reservation.getStartDate().isBefore(LocalDate.now()) && !cancel)
+        {
+            result.addMessage("[Error] Unable to cancel reservation. Start date is in the past");
+            return false;
+        }
         return true;
     }
+
+
+
+
+    //10,2023-02-17,2023-02-19,3,400
+
+    //  return result.isSuccess();
+
+
+      /*  if (reservation.getStartDate().isBefore(LocalDate.now())) {
+            return false;
+        }
+
+        reservationRepository.deleteById(reservation);
+        return true; */
+
+
+
 
 
     public Result validate(Reservation reservation) throws DataException {
@@ -138,8 +159,6 @@ public class ReservationService {
             result.addMessage("Start date should not be in the past.");
             return result;
         }
-
-
 
 
 

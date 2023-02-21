@@ -26,7 +26,7 @@ public class GuestFileRepository implements GuestRepository {
     @Override
     public Guest findById(int guest_id) throws DataException {
         return findAll().stream()
-                .filter(guest -> guest.getGuest_id() == guest_id)
+                .filter(guest -> guest.getGuest_id() == (guest_id))
                 .findFirst()
                 .orElse(null);
     }

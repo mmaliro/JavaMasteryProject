@@ -87,10 +87,6 @@ public class View {
         io.printf("Success! Reservation %s added", res.getRes_id());
     }
 
-    public void printSuccessMessageForUpdate(Reservation res) {
-        io.printf("Success! Reservation %s updated", res.getRes_id());
-    }
-
 
     public void displayError(Result result) {
         displayHeader("Reservation not added:");

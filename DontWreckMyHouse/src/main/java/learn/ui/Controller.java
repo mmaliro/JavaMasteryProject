@@ -76,18 +76,29 @@ public class Controller {
         Host host = hostService.findByEmail(hostEmail);
         if (host == null) {
             view.printString("Host email not found.");
+            return;
         }
 
         List<Reservation> allReservations = reservationService.findByHost(hostEmail);
-        view.displayReservations(allReservations, host);
 
-        reservation.setRes_id( view.getResId());
+        if (allReservations.size() == 0) {
+            view.displayReservations(allReservations, host);
+            return;
+        } else {
+            view.displayReservations(allReservations, host);
+        }
+
+        reservation.setRes_id(view.getResId());
         reservation.setHost(host);
+
+
         boolean result = reservationService.cancelReservation(reservation);
 
         if (result) {
             view.printString("Reservation cancelled");
         }
+
+
 
 
 
@@ -108,10 +119,17 @@ public class Controller {
         Host host = hostService.findByEmail(hostEmail);
         if (host == null) {
             view.printString("Host email not found.");
+            return;
         }
 
         List<Reservation> allReservations = reservationService.findByHost(hostEmail);
-        view.displayReservations(allReservations, host);
+
+       if (allReservations.size() == 0) {
+           view.displayReservations(allReservations, host);
+            return;
+        } else {
+           view.displayReservations(allReservations, host);
+       }
 
         int reservationId = view.getResId();
 
@@ -125,12 +143,12 @@ public class Controller {
         editReservation.setGuest(guest);
         editReservation.setHost(host);
         editReservation.setRes_id(reservationId);
-        System.out.println("Summary");
-        System.out.println("=======");
-        System.out.printf("Start: %s%n", start);
-        System.out.printf("End: %s%n", end);
-        System.out.printf("Total: $%s%n", reservationService.calculate(editReservation));
-        System.out.println("Is this okay? [y/n]");
+        view.printString("Summary");
+        view.printString("=======");
+        view.printString("Start: " + start);
+        view.printString("End: " + end);
+        view.printString("Total: $" + reservationService.calculate(editReservation));
+        view.printString("Is this okay? [y/n]");
         input = console.next();
 
         Result result = reservationService.editReservation(editReservation);
@@ -138,13 +156,13 @@ public class Controller {
 
 
        while (!(input.equalsIgnoreCase("y") || input.equalsIgnoreCase("n"))) {
-            System.out.println("Invalid input. Please enter 'y' or 'n'.");
-            System.out.println("Is this okay? [y/n]");
+            view.printString("Invalid input. Please enter 'y' or 'n'.");
+            view.printString("Is this okay? [y/n]");
             input = console.next();
         }
 
         if (input.equalsIgnoreCase("y") && result.isSuccess()) {
-            System.out.printf("Success! Reservation %s updated", reservationId);
+            view.printString("Success! Reservation " + reservationId + " updated");
         } else if (input.equalsIgnoreCase("n")) {
             reservationService.cancelReservation(editReservation);
             view.printString("Reservation cancelled. You can start over.");
@@ -188,18 +206,18 @@ public class Controller {
         newReservation.setEndDate(end);
         newReservation.setGuest(guest);
         newReservation.setHost(host);
-        System.out.println("Summary");
-        System.out.println("=======");
-        System.out.printf("Start: %s%n", start);
-        System.out.printf("End: %s%n", end);
-        System.out.printf("Total: $%s%n", reservationService.calculate(newReservation));
-        System.out.println("Is this okay? [y/n]");
+        view.printString("Summary");
+        view.printString("=======");
+        view.printString("Start: " + start);
+        view.printString("End: " + end);
+        view.printString("Total: $" + reservationService.calculate(newReservation));
+        view.printString("Is this okay? [y/n]");
         input = console.next();
         Result result = reservationService.createReservation(newReservation);
 
         while (!(input.equalsIgnoreCase("y") || input.equalsIgnoreCase("n"))) {
-            System.out.println("Invalid input. Please enter 'y' or 'n'.");
-            System.out.println("Is this okay? [y/n]");
+            view.printString("Invalid input. Please enter 'y' or 'n'.");
+            view.printString("Is this okay? [y/n]");
             input = console.next();
         }
 
@@ -220,10 +238,20 @@ public class Controller {
     }
 
     private void viewByHostEmail() throws DataException {
-
         Host host = getHost();
+
+        if (host == null) {
+            view.printString("Host does not exist.");
+            return;
+        }
+
+
         List<Reservation> allReservations = reservationService.findByHost(host.getHostEmail());
         view.displayReservations(allReservations, host);
+
+
+
+
     }
 
     private Guest getGuest() throws DataException {
