@@ -107,7 +107,6 @@ public class Controller {
         Result cancel = reservationService.cancelReservation(reservation);
 
         if (cancel.isSuccess()) {
-            reservationService.cancelReservation(reservation);
             view.printString("Reservation cancelled");
         } else {
             view.displayError(cancel);
