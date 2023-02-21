@@ -269,10 +269,6 @@ public class Controller {
 
     }
 
-    private Guest getGuest() throws DataException {
-        String guestEmail = view.getGuestEmail();
-        return guestService.findByEmail(guestEmail);
-    }
 
     private Host getHost() throws DataException {
         String hostEmail = view.getHostEmail();
